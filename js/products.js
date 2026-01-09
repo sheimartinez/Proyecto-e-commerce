@@ -159,7 +159,11 @@ const token = localStorage.getItem("token");
 const API_URL = "https://ecommerce-nzs0.onrender.com";
 const urlProductos = `${API_URL}/cats_products/${categoriaID}`;
 
+console.log("categoriaID:", categoriaID);
+console.log("token:", token);
+
 if (categoriaID && token) {
+    console.log("ENTRA AL FETCH");
     fetch(urlProductos, {
         headers: { "Authorization": `Bearer ${token}` }
     })

@@ -1,5 +1,7 @@
 // declaramos las constantes para trabajar mejor //
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("LOGIN JS NUEVO CARGADO");
+    
     const usuario = document.getElementById('usuario');
     const password = document.getElementById('password');
     const boton = document.getElementById('boton');

@@ -1,10 +1,12 @@
-const CATEGORIES_URL = "http://localhost:3000/cats";
-const PUBLISH_PRODUCT_URL = "http://localhost:3000/sell";
-const PRODUCTS_URL = "http://localhost:3000/cats_products";
-const PRODUCT_INFO_URL = "http://localhost:3000/products";
-const PRODUCT_INFO_COMMENTS_URL = "http://localhost:3000/products_comments";
-const CART_INFO_URL = "http://localhost:3000/user_cart";
-const CART_BUY_URL = "http://localhost:3000/cart";
+const API_URL = "https://ecommerce-nzs0.onrender.com";
+
+const CATEGORIES_URL = `${API_URL}/cats`;
+const PUBLISH_PRODUCT_URL = `${API_URL}/sell`;
+const PRODUCTS_URL = `${API_URL}/cats_products`;
+const PRODUCT_INFO_URL = `${API_URL}/products`;
+const PRODUCT_INFO_COMMENTS_URL = `${API_URL}/products_comments`;
+const CART_INFO_URL = `${API_URL}/user_cart`;
+const CART_BUY_URL = `${API_URL}/cart`;
 const EXT_TYPE = ".json";
 
 let showSpinner = function () {

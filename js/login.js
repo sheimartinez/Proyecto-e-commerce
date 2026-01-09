@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     boton.addEventListener("click", (e) => {
         e.preventDefault();
+        console.log("CLICK EN LOGIN");
 
         if (usuario.value === "" || password.value === "") {
         Swal.fire({

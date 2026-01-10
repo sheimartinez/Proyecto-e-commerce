@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const listaCarrito = contenidoCarrito;
   const resumenCarrito = document.getElementById("resumenCompra");
 
+  if (!resumenCarrito) {
+    console.error("No se encontró el elemento");
+    return;
+  }
+
   carrito.forEach((producto, index) => {
     const nombre = producto.nombre;
     const precioTexto = producto.precio;

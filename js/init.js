@@ -23,11 +23,15 @@ let getJSONData = function (url) {
 
   const token = localStorage.getItem("token");
 
-  return fetch(url, {
-    headers: {
+  let opciones = {};
+
+  if (token) {
+    opciones.headers = {
       "Authorization": "Bearer " + token
-    }
-  })
+    };
+  }
+
+  return fetch(url, opciones)
     .then((response) => {
       if (response.ok) {
         return response.json();

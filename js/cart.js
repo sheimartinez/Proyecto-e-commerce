@@ -379,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       //parte del fetch del desafiate de la entrega 8.
-      fetch("http://localhost:3000/cart", {
+      fetch(`${API_URL}/cart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

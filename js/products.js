@@ -156,7 +156,6 @@ tarjetas.forEach(tarjeta => {
 
 const categoriaID = localStorage.getItem("catID");
 const token = localStorage.getItem("token");
-const API_URL = "https://ecommerce-nzs0.onrender.com";
 const urlProductos = `${API_URL}/cats_products/${categoriaID}`;
 
 console.log("categoriaID:", categoriaID);

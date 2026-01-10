@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById('password');
     const boton = document.getElementById('boton');
 
-    const API_URL = "https://ecommerce-nzs0.onrender.com";
-
     boton.addEventListener("click", (e) => {
         e.preventDefault();
         console.log("CLICK EN LOGIN");

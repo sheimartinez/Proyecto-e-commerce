@@ -53,15 +53,6 @@ let getJSONData = function (url) {
     });
 };
 
-const usuarioLogeado = localStorage.getItem("usuarioLogeado");
-const loginLink = document.getElementById("loginLink");
-
-if (usuarioLogeado) {
-  loginLink.textContent = usuarioLogeado;
-}
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const loginItem = document.getElementById("login-item");
   const loginLink = document.getElementById("loginLink");
@@ -70,15 +61,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const navProfileImg = document.getElementById("nav-profile-img");
   const profileLink = document.getElementById("user-profile-link");
 
-  const usuario = localStorage.getItem("usuarioLogeado");
+  const usuarioLogeado = localStorage.getItem("usuarioLogeado");
   const profileImages = JSON.parse(localStorage.getItem("profileImages")) || {};
+  
+  if (usuarioLogeado && loginLink) {
+    loginLink.textContent = usuarioLogeado;
+  }
 
-  if (usuario) {
+  if (usuarioLogeado) {
     loginItem.style.display = "none";
     userProfileItem.style.display = "flex";
 
-    usernameText.textContent = usuario;
-    navProfileImg.src = profileImages[usuario] ? profileImages[usuario] : "img/default-profile.png";
+    usernameText.textContent = usuarioLogeado;
+    navProfileImg.src = profileImages[usuarioLogeado] ? profileImages[usuarioLogeado] : "img/default-profile.png";
     profileLink.href = "my-profile.html";
   } else {
     loginItem.style.display = "block";

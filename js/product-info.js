@@ -29,6 +29,7 @@ function guardarProducto(producto){
    const carrito = JSON.parse(localStorage.getItem("cartItems")) || [];
    
    const productoGuardado = {
+    id:producto.id,
     nombre: producto.name,
     precio: producto.currency + " " + producto.cost,
     imagen: producto.images[0],

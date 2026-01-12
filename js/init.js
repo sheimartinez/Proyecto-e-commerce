@@ -68,6 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
     loginLink.textContent = usuarioLogeado;
   }
 
+  if (!loginItem || !userProfileItem) {
+    return;
+  }
+  
   if (usuarioLogeado) {
     loginItem.style.display = "none";
     userProfileItem.style.display = "flex";

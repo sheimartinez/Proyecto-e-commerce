@@ -383,14 +383,39 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+      const token = localStorage.getItem("token");
+      console.log("Token encontrado:", token);
+      if (!token) {
+        Swal.fire("Error", "Debes iniciar sesión para realizar la compra.", "error");
+        return;
+      }
+      
+      const carritoParaEnviar = carrito.map(producto => ({
+        id: producto.id,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        imagen: producto.imagen,
+        cantidad: producto.cantidad || 1
+      }));
+      
+      console.log("Datos a enviar:", carritoParaEnviar);
+
       //parte del fetch del desafiate de la entrega 8.
       fetch(`${API_URL}/cart`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + token
         },
-        body: JSON.stringify(carrito)
-      }).then(res => res.json())
+        body: JSON.stringify(carritoParaEnviar)
+      }).then(res => {
+        if (!res.ok) {
+          return res.json().then(error => {
+            throw error;
+          });
+        }
+        res.json();
+      })
       .then(data => {
         console.log("Carrito enviado correctamente:", data);
 
